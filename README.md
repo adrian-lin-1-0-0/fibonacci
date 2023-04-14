@@ -70,7 +70,7 @@ func fastDoubling(n int) int {
 
 ```
 BenchmarkFastDoubling-8       	1000000000	         0.0000018 ns/op	       0 B/op	       0 allocs/op
-BenchmarkRecursionChannel-8   	1000000000	         0.002087 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRecursionChannel-8   	1000000000	         0.002087 ns/op	               0 B/op	       0 allocs/op
 BenchmarkTailCall-8           	1000000000	         0.0003478 ns/op	       0 B/op	       0 allocs/op
 BenchmarkForLoop-8            	1000000000	         0.0000029 ns/op	       0 B/op	       0 allocs/op
 ```
