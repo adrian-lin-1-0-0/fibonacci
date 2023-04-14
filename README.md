@@ -2,41 +2,41 @@
 
 ## Q-Matrix
 
-$\begin{aligned}
+$$\begin{aligned}
 Q &= \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} F_2 & F_1 \\ F_1 & F_0 \end{bmatrix}
-\end{aligned}$
+\end{aligned}$$
 
-$\begin{aligned}
+$$\begin{aligned}
 Q^{n+1} &= QQ^n \\ 
         &= \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} F_{n+1} & F_n \\ F_n & F_{n-1} \end{bmatrix} \\
         &= \begin{bmatrix} F_{n+1} + F_n & F_n + F_{n-1} \\ F_{n+1} &F_n \end{bmatrix} \\
         &= \begin{bmatrix} F_{n+2} & F_{n+1} \\ F_{n+1} & F_{n} \end{bmatrix}
-\end{aligned}$
+\end{aligned}$$
 
 ## Fast doubling
 
-$\begin{aligned}
+$$\begin{aligned}
 \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}^n = \begin{bmatrix} F(n+1) & F(n) \\ F(n) & F(n-1) \end{bmatrix}
-\end{aligned}$
+\end{aligned}$$
 
-$\begin{aligned}
+$$\begin{aligned}
 \begin{bmatrix} F(2n+1) \\ F(2n) \end{bmatrix}^n &= \begin{bmatrix} F(n+1) & F(n) \\ F(n) & F(n-1) \end{bmatrix}^{2n} \begin{bmatrix} 1 \\ 0 \end{bmatrix} \\
                                                  &= \begin{bmatrix} F(n+1) & F(n) \\ F(n) & F(n-1) \end{bmatrix} \begin{bmatrix} F(n+1) & F(n) \\ F(n) & F(n-1) \end{bmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix} \\
                                                  &= \begin{bmatrix} F(n+1)^2 + F(n)^2 \\ F(n)F(n+1) + F(n-1)F(n) \end{bmatrix}
-\end{aligned}$
+\end{aligned}$$
 
 
-$\begin{aligned}
+$$\begin{aligned}
 F(2n+1)  &= F(n+1)^2 + F(n)^2 \\
-\end{aligned}$
+\end{aligned}$$
 
-$\begin{aligned}
+$$\begin{aligned}
 F(2n)  &= F(n)F(n+1) + F(n-1)F(n) \\
        &= F(n)[F(n+1)+F(n-1) \\
        &= F(n)[F(n+1)+F(n-1)+F(n)-F(n)] \\
        &= F(n)[F(n+1)+F(n+1)-F(n)] \\
        &= F(n)[2*F(n+1)-F(n)]
-\end{aligned}$
+\end{aligned}$$
 
 Golang code
 
